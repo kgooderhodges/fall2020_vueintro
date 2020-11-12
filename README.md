@@ -1,1 +1,4 @@
-# fall2020_vueintro
+# Intro to Vue
+Working with a lightweight front end framework
+
+## License
