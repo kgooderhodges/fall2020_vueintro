@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Working with Vue</title>
-
+    <link rel="stylesheet" href="css/main.css">
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
+    <!-- !this app ID is connecting to vue, and vue needs to connect to this section only -->
     <main id="app">
         <h1 @click="clickHeader">{{ message }}</h1>
         <h2>{{ anotherMessage }}</h2>
-
-<!-- show the prof data in collection -->
+        
+        <!-- show the prof data in collection -->
         <ul>
-            <li v-for="item in collection">
-                <p v-on:click="logClicked">Prof Name: {{ item.name }},<br>Role: {{ item.role }}, <br>Nickname: {{ item.nickname }}</p>
+            <li v-for="prof in professors"> <!-- !you can use, v-on: or @ to link to Vue -->
+                <p>Prof Name: {{ prof.name }}, Role: {{ prof.role }}, Nickname: {{ prof.nickname }}</p>
+                <a href="" class="remove-prof" @click.prevent="removeProf(prof)" v-bind:css="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name }}</a><!-- <a :href="">Remove </a> -->
+                <!-- !the v-bind can also look like this instead :class=""-->
             </li>
         </ul>
+
+        <section class="bio-data" :class="{'show-bio' : showBioData}">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis molestias corporis libero quibusdam ut similique.
+            </p>
+        </section>
     </main>
+    <!-- !This will be how we write the contact form prevent for vue -->
+    <!-- <form @submit.prevent="handleForm"></form> -->
     <script src="js/main.js" type="module"></script>
 </body>
 </html>
