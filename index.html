@@ -24,9 +24,9 @@
         </ul>
 
         <section class="bio-data" :class="{'show-bio' : showBioData}">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis molestias corporis libero quibusdam ut similique.
-            </p>
+            <h1>{{ currentProfData.name }}</h1>
+            <p> {{ currentProfData.nickname }}</p>
+            <p> {{ currentProfData.role }}</p>
         </section>
     </main>
     <!-- !This will be how we write the contact form prevent for vue -->
