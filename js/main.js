@@ -9,6 +9,7 @@
             anotherMessage: "You can change this message so easily",
             removeAformat: true,
             showBioData: false,
+            currentProfData: {},
 
             // collection is an array of data
             professors: [
@@ -52,6 +53,7 @@
                 // the "this" keyword inside a vue instance REFERS to the Vue instance itself
                 // question mark is a shorthand for IF. This statement is saying if it's false, make it true. if it's true make it false.
                 this.showBioData = this.showBioData ? false: true
+                this.currentProfData = target;
             }
         }
     }).$mount("#app"); // this is a more common way of linking Vue to wrapper in HTML (the main #app)
