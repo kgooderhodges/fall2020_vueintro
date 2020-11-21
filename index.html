@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Working with Vue</title>
     <link rel="stylesheet" href="css/main.css">
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
+
 <body>
     <!-- !this app ID is connecting to vue, and vue needs to connect to this section only -->
     <main id="app">
         <h1 @click="clickHeader">{{ message }}</h1>
         <h2>{{ anotherMessage }}</h2>
-        
+
         <!-- show the prof data in collection -->
         <ul>
-            <li v-for="prof in professors"> <!-- !you can use, v-on: or @ to link to Vue -->
+            <li v-for="prof, index in professors">
+                <!-- *v-for is for passing through rows of data-->
+                <!-- !you can use, v-on: or @ to link to Vue -->
                 <p>Prof Name: {{ prof.name }}, Role: {{ prof.role }}, Nickname: {{ prof.nickname }}</p>
-                <a href="" class="remove-prof" @click.prevent="removeProf(prof)" v-bind:css="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name }}</a><!-- <a :href="">Remove </a> -->
+
+                <a href="" class="remove-prof" @click.prevent="showProfData(prof)" :class="
+                {'prof-button-modifier' : removeAformat}">Show {{ prof.name }}'s info</a>
+
+                <a href="" class="remove-prof" @click.prevent="removeProf(index)" :class="
+                {'prof-button-modifier' : removeAformat}">Remove {{ prof.name }}</a>
+                <!-- <a :href="">Remove </a> -->
                 <!-- !the v-bind can also look like this instead :class=""-->
             </li>
         </ul>
-
+        <!-- !show mnore section -->
         <section class="bio-data" :class="{'show-bio' : showBioData}">
             <h1>{{ currentProfData.name }}</h1>
             <p> {{ currentProfData.nickname }}</p>
@@ -33,4 +43,5 @@
     <!-- <form @submit.prevent="handleForm"></form> -->
     <script src="js/main.js" type="module"></script>
 </body>
+
 </html>
