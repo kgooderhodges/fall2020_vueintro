@@ -1,18 +1,4 @@
-.remove-prof {
-    padding: 10px;
-    color: white;
-    background-color: hotpink;
-    border: thin solid blue;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    border-radius: 8px;
-    text-decoration: none;
-
-    &:hover {
-        background-color: blue
-    };
-}
+@import "components/_profsection";
 
 .prof-button-modifier {
     text-decoration: none;
