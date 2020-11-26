@@ -1,7 +1,23 @@
 // this variable is pointing to the vue engine, so we are linking Vue to an element in our HTML
 import { fetchData } from "./components/DataMiner.js";
+import ProfCard from "./components/TheProfCard.js";
 
 (() => {
+    // Vue.component("prof-card", {
+    //     props:["prof"],
+        
+    //     template: `<li>
+    //                     <img :src="'images/' + prof.Avatar" :alt="{{ prof.Name }}">
+    //                     <p>Prof Name: {{ prof.Name }}</p>
+    //                     <a href="" class="remove-prof">Show {{ prof.Name }}'s Info</a>
+    //                     <a href="" class="remove-prof">Remove {{ prof.Name }}</a>
+    //                 </li>`,
+
+    //     created: function() {
+    //         console.log('created a prof card');
+    //     }
+    // });
+
     let vue_vm = new Vue({
         // el: "#app",
 
@@ -75,6 +91,10 @@ import { fetchData } from "./components/DataMiner.js";
                 // this.professors.splice(this.professors.indexOf(target), 1);
                 this.$delete(this.professors, target); // splice works, but delete here works better. It's more readable
             }
+        },
+
+        components: {
+            "prof-card": ProfCard
         }
     }).$mount("#app"); // this is a more common way of linking Vue to wrapper in HTML (the main #app)
 })();

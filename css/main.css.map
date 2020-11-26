@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/main.scss"],"names":[],"mappings":"AAAA,aACI,aACA,WACA,yBACA,uBACA,yBACA,eAEA,kBACA,qBAEA,mBACI,sBAIR,sBACI,qBAGJ,UACI,aAGJ,UACQ","file":"main.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/components/_profsection.scss","../sass/main.scss"],"names":[],"mappings":"AAAA,aACI,aAGJ,aACI,aACA,WACA,yBACA,uBACA,yBACA,eAEA,kBACA,qBAEA,mBACI,sBAIR,sBACI,qBCnBJ,sBACI,qBAGJ,UACI,aAGJ,UACQ","file":"main.css"}
